@@ -22,6 +22,6 @@ jobs:
           API_PASSWORD: ${{ secrets.API_PASSWORD }}
           APP_NAME: "webgoat-actions"
           DESCRIPTION: "Aplicação criada através do GitHub Actions - XGuardian"
-          LANGUAGES: ["Python"]
+          LANGUAGES: "["Python"]"
           SAST: "true"
-          TEAM_ID: [1]
+          TEAM_ID: "[1]"
