@@ -1,0 +1,27 @@
+name: XGuardian Scan Workflow
+
+on:
+  push:          # Executa no push para qualquer branch
+    branches:
+      - main     # Substitua pela branch que preferir
+  pull_request:  # Também executa em pull requests
+
+jobs:
+  xguardian-scan:
+    runs-on: ubuntu-latest  # Escolha a máquina que a action irá usar
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3  # Garante que o código do repositório está disponível
+
+      - name: XGuardian Scanning
+        uses: xmart-xguardian/xguardian-actions@v24.11.3
+        env:                      # Passe as variáveis de ambiente configuradas no repositório
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+          API_EMAIL: ${{ secrets.API_EMAIL }}
+          API_PASSWORD: ${{ secrets.API_PASSWORD }}
+          APP_NAME: ${{vars.APP_NAME}}
+          DESCRIPTION: ${{vars.DESCRIPTION}}
+          LANGUAGES: ${{vars.LANGUAGES}}
+          SAST: ${{vars.SAST}}
+          TEAM_ID: ${{vars.TEAM_ID}}
