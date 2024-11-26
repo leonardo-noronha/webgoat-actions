@@ -17,7 +17,7 @@ jobs:
         uses: xmart-xguardian/xguardian-actions@v24.11.3
         with:
           APP_NAME: ${{ github.event.repository.name }}
-          TEAM_ID: "[1]"
+          TEAM_ID: "[3]"
           LANGUAGES: '["Python"]'
           DESCRIPTION: "Aplicação criada através do GitHub Actions - XGuardian"
           POLICY_SAST: 0
