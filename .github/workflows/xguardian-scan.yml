@@ -15,7 +15,7 @@ jobs:
 
       - name: Executar scan de segurança
         id: xguardian
-        uses: xmart-xguardian/xguardian-actions@v24.12.0
+        uses: xmart-xguardian/xguardian-actions@v24.12.1
         with:
           api_email: ${{ secrets.API_EMAIL }}
           api_password: ${{ secrets.API_PASSWORD }}
